@@ -7,7 +7,7 @@ import { NFTCreate } from "./componets/NFTCreate.tsx";
 import { NFTEdit } from "./componets/NFTEdit.tsx";
 import { NFTList } from "./componets/NFTList.tsx";
 
-const dataProvider = jsonServerProvider("http://localhost:3000");
+const dataProvider = jsonServerProvider(import.meta.env.SERVER_URL);
 
 const App = () => (
   <Admin dataProvider={dataProvider}>
