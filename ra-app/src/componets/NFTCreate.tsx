@@ -6,7 +6,7 @@ import {
   TextInput,
 } from "react-admin";
 
-export const PosterCreate = () => (
+export const NFTCreate = () => (
   <Create>
     <SimpleForm>
       <TextInput source="id" />

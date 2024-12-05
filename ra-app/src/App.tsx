@@ -1,28 +1,22 @@
-import { Admin, Resource } from "react-admin";
 import jsonServerProvider from "ra-data-json-server";
-import { PosterList } from "./components/PosterList";
-import { PosterEdit } from "./components/PosterEdit";
-import { PosterCreate } from "./components/PosterCreate";
-import { CategoryList } from "./components/CategoryList";
-import { CategoryEdit } from "./components/CategoryEdit";
-import { CategoryCreate } from "./components/CategoryCreate";
+import { Admin, Resource } from "react-admin";
+import { CategoryCreate } from "./componets/CategoryCreate";
+import { CategoryEdit } from "./componets/CategoryEdit";
+import { CategoryList } from "./componets/CategoryList";
+import { NFTCreate } from "./componets/NFTCreate.tsx";
+import { NFTEdit } from "./componets/NFTEdit.tsx";
+import { NFTList } from "./componets/NFTList.tsx";
 
 const dataProvider = jsonServerProvider("http://localhost:3000");
 
 const App = () => (
   <Admin dataProvider={dataProvider}>
-    <Resource
-      name="posters"
-      list={PosterList}
-      edit={PosterEdit}
-      create={PosterCreate}
-    />
+    <Resource name="NFTs" list={NFTList} edit={NFTEdit} create={NFTCreate} />
     <Resource
       name="categories"
       list={CategoryList}
       edit={CategoryEdit}
       create={CategoryCreate}
-      // recordRepresentation="name"
     />
   </Admin>
 );
